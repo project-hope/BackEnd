@@ -5,8 +5,8 @@ import ctAxisTitle from 'chartist-plugin-axistitle'
 import 'chartist-plugin-legend'
 import '../css/graphs.css';
 
-class Graphs extends React.Component{
-  constructor(props){
+class Graphs extends React.Component {
+  constructor(props) {
     super(props);
   }
 
@@ -86,17 +86,17 @@ class Graphs extends React.Component{
           })
       ]
     }
-    return(
+    return (
       <div>
-        { this.props.chartVisible &&
-          <div styleName="graphs">
-            <div styleName="individualGraph">
-              <h2 styleName="heading">Portfolio Value</h2>
+        {this.props.chartVisible &&
+          <div className={'graphs'}>
+            <div className={"individualGraph"}>
+              <h2 className={"heading"}>Portfolio Value</h2>
               <ChartistGraph data={this.props.portfolioChartData} options={portfolioChartOptions} type={'Line'} />
-            <br/>
+              <br />
             </div>
-            <div styleName="individualGraph">
-              <h2 styleName="heading">Annual Retirement Income</h2>
+            <div className={"individualGraph"}>
+              <h2 className={"heading"}>Annual Retirement Income</h2>
               <ChartistGraph data={this.props.incomeChartData} options={incomeChartOptions} type={'Line'} />
             </div>
           </div>

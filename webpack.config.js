@@ -28,34 +28,30 @@ module.exports = {
   },
   plugins: plugins,
   module: {
-    rules: [
-      {
-        include: path.resolve(__dirname, './webpack_src'),
-        loader: 'babel-loader',
-        query: {
-          plugins: [
-            '@babel/transform-react-jsx',
-            [
-              'react-css-modules',
-              {
-                context
-              }
-            ]
+    rules: [{
+      include: path.resolve(__dirname, './webpack_src'),
+      loaders: [
+        'style-loader',
+        'css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+      ],
+      test: /\.css$/
+    },
+    {
+      include: path.resolve(__dirname, './webpack_src'),
+      loader: 'babel-loader',
+      query: {
+        plugins: [
+          '@babel/transform-react-jsx',
+          [
+            'react-css-modules',
+            {
+              context
+            }
           ]
-        },
-        test: /\.(js|jsx)$/
+        ]
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader'
-      }, {
-        test: /\.css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
+      test: /\.(js|jsx)$/
+    }
     ]
   },
   devtool: 'source-map',

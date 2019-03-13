@@ -35,7 +35,7 @@ class Disability extends React.Component {
   handleChange(field) {
     const storedThis = this;
     return function (e) {
-      storedThis.setState({[field]: e.target.value});
+      storedThis.setState({ [field]: e.target.value });
     };
   }
 
@@ -53,99 +53,99 @@ class Disability extends React.Component {
 
     return (
       <div>
-        <form styleName="form" onSubmit={this.handleSubmit}>
-          <label styleName="label">
+        <form className={"form"} onSubmit={this.handleSubmit}>
+          <label className={"label"}>
             Current Age
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={currentAge}
               placeholder='Current Age'
-              onChange={this.handleChange('currentAge')}/>
+              onChange={this.handleChange('currentAge')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Retirement Age
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={retirementAge}
               placeholder='Retirement Age'
-              onChange={this.handleChange('retirementAge')}/>
+              onChange={this.handleChange('retirementAge')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Savings
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={currentSavings}
               placeholder='Savings'
-              onChange={this.handleChange('currentSavings')}/>
+              onChange={this.handleChange('currentSavings')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Immediate Expenses
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={immediateExpenses}
               placeholder='Immediate Expenses'
-              onChange={this.handleChange('immediateExpenses')}/>
+              onChange={this.handleChange('immediateExpenses')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Additional Annual Savings
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={additionalSavings}
               placeholder='Additional Annual Savings'
-              onChange={this.handleChange('additionalSavings')}/>
+              onChange={this.handleChange('additionalSavings')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Additional Monthly Expenses
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={monthlyExpensesAmount}
               placeholder='Addional Monthly Expenses Amount'
-              onChange={this.handleChange('monthlyExpensesAmount')}/>
+              onChange={this.handleChange('monthlyExpensesAmount')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Monthly Expenses Start Year
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={monthlyExpensesStart}
               placeholder='Monthly Expenses Start Year'
-              onChange={this.handleChange('monthlyExpensesStart')}/>
+              onChange={this.handleChange('monthlyExpensesStart')} />
           </label>
-          <br/>
-          <label styleName="label">
+          <br />
+          <label className={"label"}>
             Monthly Expenses End Year
             <input
-              styleName="input"
+              className={"input"}
               type="number"
               value={monthlyExpensesEnds}
               placeholder='Monthly Expenses End Year'
-              onChange={this.handleChange('monthlyExpensesEnds')}/>
+              onChange={this.handleChange('monthlyExpensesEnds')} />
           </label>
-          <label styleName="label">
-            Investment Choice: 
-            <input 
-              styleName="input" 
-              type="range" 
-              min="1" 
-              max="9" 
-              value={this.state.investmentChoice} 
-              onChange={this.handleChange} 
+          <label className={"label"}>
+            Investment Choice:
+            <input
+              className={"input"}
+              type="range"
+              min="1"
+              max="9"
+              value={this.state.investmentChoice}
+              onChange={this.handleChange}
             />
           </label>
-          <br/>
-          <button styleName="button" type='submit'>Submit</button>
+          <br />
+          <button className={"button"} type='submit'>Submit</button>
         </form>
       </div>
     );

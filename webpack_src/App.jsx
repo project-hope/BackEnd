@@ -8,6 +8,8 @@ import DivorceForm from './Components/DivorceForm.jsx';
 import Graphs from './Components/Graphs.jsx';
 
 import './App.css';
+// import '../app/assets/stylesheets/App.css';
+// import '../app/assets/stylesheets/application.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -33,71 +35,79 @@ class App extends React.Component {
     this.handleDivorceSubmit = this.handleDivorceSubmit.bind(this);
   }
 
-  returnHome(){
-    this.setState({showDivorce: false});
-    this.setState({showDisability: false});
-    this.setState({chartVisible: false});
+  returnHome() {
+    this.setState({ showDivorce: false });
+    this.setState({ showDisability: false });
+    this.setState({ chartVisible: false });
   }
 
-  handleDisability(){
-    this.setState({showDivorce: false});
-    this.setState({showDisability: true});
+  handleDisability() {
+    this.setState({ showDivorce: false });
+    this.setState({ showDisability: true });
   }
 
-  handleDivorce(){
-    this.setState({showDivorce: true});
-    this.setState({showDisability: false});
+  handleDivorce() {
+    this.setState({ showDivorce: true });
+    this.setState({ showDisability: false });
   }
 
-  handleDisabilitySubmit(data){
-    this.setState({portfolioChartData: {
-      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      series: [
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-      ]
-    }});
-    this.setState({incomeChartData: {
-      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      series: [
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-      ]
-    }});
-    this.setState({chartVisible: true});
+  handleDisabilitySubmit(data) {
+    this.setState({
+      portfolioChartData: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        series: [
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
+        ]
+      }
+    });
+    this.setState({
+      incomeChartData: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        series: [
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
+        ]
+      }
+    });
+    this.setState({ chartVisible: true });
   }
 
-  handleDivorceSubmit(data){
-    this.setState({portfolioChartData: {
-      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      series: [
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-      ]
-    }});
-    this.setState({incomeChartData: {
-      labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      series: [
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-        [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-      ]
-    }});
-    this.setState({chartVisible: true});
+  handleDivorceSubmit(data) {
+    this.setState({
+      portfolioChartData: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        series: [
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
+        ]
+      }
+    });
+    this.setState({
+      incomeChartData: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        series: [
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
+          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
+        ]
+      }
+    });
+    this.setState({ chartVisible: true });
   }
 
   render() {
     return (
-      <div styleName="background">
-        <div styleName="header">
-          <h1 onClick={this.returnHome}>Project Hope</h1>
+      <div className={"background"}>
+        <div className={"header"}>
+          <h1 margin={0} onClick={this.returnHome}>Project Hope</h1>
         </div>
-        
-        <div styleName="body">
-        {!this.state.showDivorce && !this.state.showDisability &&
+
+        <div className={"body"}>
+          {!this.state.showDivorce && !this.state.showDisability &&
             <div>
               <button onClick={this.handleDisability}>Disability</button>
               <button onClick={this.handleDivorce}>Divorce</button>
