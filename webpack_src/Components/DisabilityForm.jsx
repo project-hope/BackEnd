@@ -1,8 +1,5 @@
 import React from 'react';
-import Chartist from 'chartist';
-import ctAxisTitle from 'chartist-plugin-axistitle';
-import 'chartist-plugin-legend';
-import './Disability.css';
+import '../css/form.css';
 
 class Disability extends React.Component {
   constructor(props) {
@@ -11,77 +8,35 @@ class Disability extends React.Component {
       .handleChange
       .bind(this);
     this.state = {
-      currentAge: 40
+      currentAge: undefined,
+      retirementAge: undefined,
+      currentSavings: undefined,
+      immediateExpenses: undefined,
+      additionalSavings: undefined,
+      monthlyExpensesAmount: undefined,
+      monthlyExpensesStart: undefined,
+      monthlyExpensesEnds: undefined,
+      investmentChoice: undefined,
     };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    this.makeChart();
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.onSubmit(this.state)
+
   }
 
   handleChange(field) {
     const storedThis = this;
     return function (e) {
-      storedThis.setState({ [field]: e.target.value });
+      storedThis.setState({[field]: e.target.value});
     };
-  }
-
-  makeChart() {
-    new Chartist.Line('.ct-chart', {
-      labels: [
-        40, 41, 42, 43, 44
-      ],
-      series: [
-        [
-          1, 2, 3, 4, 5
-        ],
-        [
-          1, 1, 1.5, 2, 2.5
-        ],
-        [1, 3, 4.5, 6, 7.5]
-      ]
-    }, {
-        fullWidth: true,
-        chartPadding: {
-          right: 40
-        },
-        axisY: {
-          onlyInteger: true,
-          offset: 20
-        },
-        plugins: [
-          ctAxisTitle({
-            axisY: {
-              axisTitle: 'Portfolio Balance($)',
-              axisClass: 'ct-axis-title',
-              offset: {
-                x: 0,
-                y: 0
-              },
-              textAnchor: 'middle',
-              flipTitle: true
-            },
-            axisX: {
-              axisTitle: 'Age',
-              axisClass: 'ct-axis-title',
-              offset: {
-                x: 0,
-                y: 40
-              },
-              textAnchor: 'middle'
-            }
-          }),
-          Chartist
-            .plugins
-            .legend({
-              legendNames: ['Average', 'Lower Bound', 'Upper Bound']
-            })
-        ]
-      });
   }
 
   render() {
@@ -97,7 +52,7 @@ class Disability extends React.Component {
     } = this.state;
 
     return (
-      <div styleName="background">
+      <div>
         <form styleName="form" onSubmit={this.handleSubmit}>
           <label styleName="label">
             Current Age
@@ -106,9 +61,9 @@ class Disability extends React.Component {
               type="number"
               value={currentAge}
               placeholder='Current Age'
-              onChange={this.handleChange('currentAge')} />
+              onChange={this.handleChange('currentAge')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Retirement Age
             <input
@@ -116,9 +71,9 @@ class Disability extends React.Component {
               type="number"
               value={retirementAge}
               placeholder='Retirement Age'
-              onChange={this.handleChange('retirementAge')} />
+              onChange={this.handleChange('retirementAge')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Savings
             <input
@@ -126,9 +81,9 @@ class Disability extends React.Component {
               type="number"
               value={currentSavings}
               placeholder='Savings'
-              onChange={this.handleChange('currentSavings')} />
+              onChange={this.handleChange('currentSavings')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Immediate Expenses
             <input
@@ -136,9 +91,9 @@ class Disability extends React.Component {
               type="number"
               value={immediateExpenses}
               placeholder='Immediate Expenses'
-              onChange={this.handleChange('immediateExpenses')} />
+              onChange={this.handleChange('immediateExpenses')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Additional Annual Savings
             <input
@@ -146,9 +101,9 @@ class Disability extends React.Component {
               type="number"
               value={additionalSavings}
               placeholder='Additional Annual Savings'
-              onChange={this.handleChange('additionalSavings')} />
+              onChange={this.handleChange('additionalSavings')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Additional Monthly Expenses
             <input
@@ -156,9 +111,9 @@ class Disability extends React.Component {
               type="number"
               value={monthlyExpensesAmount}
               placeholder='Addional Monthly Expenses Amount'
-              onChange={this.handleChange('monthlyExpensesAmount')} />
+              onChange={this.handleChange('monthlyExpensesAmount')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Monthly Expenses Start Year
             <input
@@ -166,9 +121,9 @@ class Disability extends React.Component {
               type="number"
               value={monthlyExpensesStart}
               placeholder='Monthly Expenses Start Year'
-              onChange={this.handleChange('monthlyExpensesStart')} />
+              onChange={this.handleChange('monthlyExpensesStart')}/>
           </label>
-          <br />
+          <br/>
           <label styleName="label">
             Monthly Expenses End Year
             <input
@@ -176,17 +131,25 @@ class Disability extends React.Component {
               type="number"
               value={monthlyExpensesEnds}
               placeholder='Monthly Expenses End Year'
-              onChange={this.handleChange('monthlyExpensesEnds')} />
+              onChange={this.handleChange('monthlyExpensesEnds')}/>
           </label>
-          <br />
+          <label styleName="label">
+            Investment Choice: 
+            <input 
+              styleName="input" 
+              type="range" 
+              min="1" 
+              max="9" 
+              value={this.state.investmentChoice} 
+              onChange={this.handleChange} 
+            />
+          </label>
+          <br/>
+          <button styleName="button" type='submit'>Submit</button>
         </form>
-        <div styleName="graph">
-          < div className="ct-chart ct-golden-section" id="chart1"></div>
-        </div>
       </div>
     );
   }
-
 }
 
 export default Disability;
