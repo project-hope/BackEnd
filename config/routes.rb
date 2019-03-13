@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       resources :divorce, only: %i(index)
       resources :disability, only: %i(index)
   end
+
+  get '/', to: 'static#index'
 end
