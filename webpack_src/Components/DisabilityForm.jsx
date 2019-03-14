@@ -145,7 +145,9 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Investment Choice:
+              Investment Choice: 
+              <br/>
+              (Least to most aggressive)
               <input
                 className={"input"}
                 type="range"
@@ -153,8 +155,20 @@ class Disability extends React.Component {
                 min="1"
                 max="9"
                 value={portfolio}
+                list="investmentChoiceList"
                 onChange={this.handleChange('portfolio')}
               />
+              <datalist className={"tickers"} id="investmentChoiceList">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+              </datalist>
             </label>
           </div>
           <div className={"section"}>
