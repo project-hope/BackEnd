@@ -73,50 +73,50 @@ class App extends React.Component {
     } else {
       this.setState({ showIncomeGraph: false})
     }
-    // axios.get('/api/disability.json', {
-    //   params: data
-    // }).then(response =>
-    //   this.processData(response.data)
-    // );
-    const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ]] };
-    const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ]] };
-    this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
+    axios.get('/api/disability.json', {
+      params: data
+    }).then(response =>
+      this.processData(response.data)
+    );
+    // const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ]] };
+    // const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ]] };
+    // this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
   }
 
   handleDivorceSubmit(data) {
     this.setState({ showIncomeGraph: true})
-    // axios.get('/api/divorce.json', {
-    //   params: data
-    // }).then(response => {
-    //   this.processData(response.data);
-    // });
-    const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ]] };
-    const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ], [
-      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
-    ]] };
-    this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
+    axios.get('/api/divorce.json', {
+      params: data
+    }).then(response => {
+      this.processData(response.data);
+    });
+    // const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ]] };
+    // const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ], [
+    //   Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    // ]] };
+    // this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
   }
 
   processData(data) {
