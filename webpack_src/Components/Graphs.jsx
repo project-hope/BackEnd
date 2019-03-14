@@ -92,6 +92,7 @@ class Graphs extends React.Component {
             <div className={"individualGraph"}>
               <h2 className={"heading"}>Portfolio Value</h2>
               <ChartistGraph 
+                className={`${this.props.colorScheme}Lines`}
                 data={this.props.portfolioChartData} 
                 options={portfolioChartOptions} 
                 type={'Line'} 
@@ -102,6 +103,7 @@ class Graphs extends React.Component {
               <div className={"individualGraph"}>
               <h2 className={"heading"}>Annual Retirement Income</h2>
               <ChartistGraph 
+                className={`${this.props.colorScheme}Lines`}
                 data={this.props.incomeChartData} 
                 options={incomeChartOptions} 
                 type={'Line'}   

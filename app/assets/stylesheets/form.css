@@ -46,6 +46,10 @@
   /* background-color: lightgreen; */
 }
 
+.tickers {
+  color: white;
+}
+
 .button {
   float: right;
   margin-right: 5px;
@@ -59,6 +63,6 @@
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }

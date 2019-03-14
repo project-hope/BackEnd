@@ -9,10 +9,6 @@ body {
 }
 
 .homePage {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   overflow: scroll;
   position: relative;
 
@@ -22,12 +18,12 @@ body {
 
 .homeHeader {
   color: white;
-  height: 6vh;
-  margin: 0;
+  margin: 0px;
+  height: 40px;
 }
 
 .homePageImage {
-  height: 94vh;
+  height: calc(100vh - 40px);
   width: 100vw;
   /* /* position: fixed; */
   /* top: 50%; */
@@ -90,11 +86,11 @@ body {
 }
 
 .disability {
-  background-color: pink;
+  background-color: rgb(252, 155, 179);
 }
 
 .divorce {
-  background-color: green;
+  background-color: rgb(0, 139, 92);
 }
 
 .body {
