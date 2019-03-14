@@ -5,21 +5,22 @@ class Divorce extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentAge: undefined,
-      earningLevel: undefined,
-      currentSavingsBeforeDivorce: undefined,
-      currentSavingsAfterDivorce: undefined,
-      additionalAnnualSavings: undefined,
-      investmentChoice: undefined,
+      current_age: undefined,
+      earnings_level: undefined,
+      current_savings: undefined,
+      savings_after_divorce: undefined,
+      additional_annual_savings: undefined,
+      portfolio: 5,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(e) {
+  handleChange(field) {
     const storedThis = this;
     return function (e) {
+      console.log({ field, event: e.target.value });
       storedThis.setState({ [field]: e.target.value });
     };
   }
@@ -30,6 +31,14 @@ class Divorce extends React.Component {
   }
 
   render() {
+    const {
+      current_age,
+      earnings_level,
+      current_savings,
+      savings_after_divorce,
+      additional_annual_savings,
+      portfolio
+    } = this.state;
     return (
       <div>
         <form className={"form"} onSubmit={this.handleSubmit}>
@@ -39,8 +48,8 @@ class Divorce extends React.Component {
               className={"input"}
               placeholder="Current Age"
               type="number"
-              value={this.state.currentAge}
-              onChange={this.handleChange}
+              value={current_age}
+              onChange={this.handleChange('current_age')}
             />
           </label>
           <br />
@@ -49,9 +58,9 @@ class Divorce extends React.Component {
             <input
               className={"input"}
               placeholder="Earning Level"
-              type="number"
-              value={this.state.earningLevel}
-              onChange={this.handleChange}
+              type="string"
+              value={earnings_level}
+              onChange={this.handleChange('earnings_level')}
             />
           </label>
           <br />
@@ -61,8 +70,8 @@ class Divorce extends React.Component {
               className={"input"}
               placeholder="Savings Before Divorce"
               type="number"
-              value={this.state.currentSavingsBeforeDivorce}
-              onChange={this.handleChange}
+              value={current_savings}
+              onChange={this.handleChange('current_savings')}
             />
           </label>
           <br />
@@ -72,8 +81,8 @@ class Divorce extends React.Component {
               className={"input"}
               placeholder="Savings After Divorce"
               type="number"
-              value={this.state.currentSavingsAfterDivorce}
-              onChange={this.handleChange}
+              value={savings_after_divorce}
+              onChange={this.handleChange('savings_after_divorce')}
             />
           </label>
           <br />
@@ -83,8 +92,8 @@ class Divorce extends React.Component {
               className={"input"}
               placeholder="Additional Annual Savings"
               type="number"
-              value={this.state.additionalAnnualSavings}
-              onChange={this.handleChange}
+              value={additional_annual_savings}
+              onChange={this.handleChange('additional_annual_savings')}
             />
           </label>
           <br />
@@ -95,8 +104,8 @@ class Divorce extends React.Component {
               type="range"
               min="1"
               max="9"
-              value={this.state.investmentChoice}
-              onChange={this.handleChange}
+              value={portfolio}
+              onChange={this.handleChange('portfolio')}
             />
           </label>
           <br />

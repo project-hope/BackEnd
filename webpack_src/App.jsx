@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 // import Disability from './disability/Disability.jsx';
 // import Divorce from  './divorce/Divorce.jsx';
@@ -33,6 +34,7 @@ class App extends React.Component {
     this.handleDivorce = this.handleDivorce.bind(this);
     this.handleDisabilitySubmit = this.handleDisabilitySubmit.bind(this);
     this.handleDivorceSubmit = this.handleDivorceSubmit.bind(this);
+    this.processData = this.processData.bind(this);
   }
 
   returnHome() {
@@ -52,51 +54,39 @@ class App extends React.Component {
   }
 
   handleDisabilitySubmit(data) {
-    this.setState({
-      portfolioChartData: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        series: [
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-        ]
-      }
-    });
-    this.setState({
-      incomeChartData: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        series: [
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-        ]
-      }
-    });
-    this.setState({ chartVisible: true });
+    axios.get('/api/disability.json', {
+      params: data
+    }).then(response =>
+      this.processData(response.data)
+    );
   }
 
   handleDivorceSubmit(data) {
-    this.setState({
-      portfolioChartData: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        series: [
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-        ]
-      }
+    axios.get('/api/divorce.json', {
+      params: data
+    }).then(response => {
+      this.processData(response.data);
     });
-    this.setState({
-      incomeChartData: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        series: [
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()],
-          [Math.random(), Math.random(), Math.random(), Math.random(), Math.random()]
-        ]
-      }
+  }
+
+  processData(data) {
+    console.log({ data });
+    const portfolioChartData = { labels: [], series: [[], [], []] };
+    const incomeChartData = { labels: [], series: [[], [], []] };
+    data.forEach(datum => {
+      console.log(datum);
+      console.log(datum['age=']);
+      portfolioChartData.labels.push(datum.age);
+      portfolioChartData.series[0].push(datum.portfolio_value_expected);
+      portfolioChartData.series[1].push(datum.portfolio_value_lb);
+      portfolioChartData.series[2].push(datum.portfolio_value_ub);
+      incomeChartData.labels.push(datum.age);
+      incomeChartData.series[0].push(datum.income_expected);
+      incomeChartData.series[1].push(datum.income_lb);
+      incomeChartData.series[2].push(datum.income_ub);
     });
-    this.setState({ chartVisible: true });
+    this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
+    this;
   }
 
   render() {

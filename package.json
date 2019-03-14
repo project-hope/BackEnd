@@ -8,6 +8,7 @@
   "dependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.3.4",
+    "axios": "^0.18.0",
     "babel-jest": "^24.4.0",
     "babel-plugin-react-css-modules": "^5.2.1",
     "chartist": "^0.11.0",

@@ -8,15 +8,15 @@ class Disability extends React.Component {
       .handleChange
       .bind(this);
     this.state = {
-      currentAge: undefined,
-      retirementAge: undefined,
-      currentSavings: undefined,
-      immediateExpenses: undefined,
-      additionalSavings: undefined,
-      monthlyExpensesAmount: undefined,
-      monthlyExpensesStart: undefined,
-      monthlyExpensesEnds: undefined,
-      investmentChoice: undefined,
+      current_age: undefined,
+      retirement_age: undefined,
+      current_savings: undefined,
+      immediate_expenses: undefined,
+      additional_annual_savings: undefined,
+      annual_expenses_amount: undefined,
+      annual_expenses_start: undefined,
+      annual_expenses_end: undefined,
+      portfolio: 5,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -28,7 +28,7 @@ class Disability extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit(this.state)
+    this.props.onSubmit(this.state);
 
   }
 
@@ -41,14 +41,15 @@ class Disability extends React.Component {
 
   render() {
     const {
-      currentAge,
-      retirementAge,
-      currentSavings,
-      immediateExpenses,
-      additionalSavings,
-      monthlyExpensesAmount,
-      monthlyExpensesStart,
-      monthlyExpensesEnds
+      current_age,
+      retirement_age,
+      current_savings,
+      immediate_expenses,
+      additional_annual_savings,
+      annual_expenses_amount,
+      annual_expenses_start,
+      annual_expenses_end,
+      portfolio
     } = this.state;
 
     return (
@@ -59,9 +60,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={currentAge}
+              value={current_age}
               placeholder='Current Age'
-              onChange={this.handleChange('currentAge')} />
+              onChange={this.handleChange('current_age')} />
           </label>
           <br />
           <label className={"label"}>
@@ -69,9 +70,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={retirementAge}
+              value={retirement_age}
               placeholder='Retirement Age'
-              onChange={this.handleChange('retirementAge')} />
+              onChange={this.handleChange('retirement_age')} />
           </label>
           <br />
           <label className={"label"}>
@@ -79,9 +80,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={currentSavings}
+              value={current_savings}
               placeholder='Savings'
-              onChange={this.handleChange('currentSavings')} />
+              onChange={this.handleChange('current_savings')} />
           </label>
           <br />
           <label className={"label"}>
@@ -89,9 +90,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={immediateExpenses}
+              value={immediate_expenses}
               placeholder='Immediate Expenses'
-              onChange={this.handleChange('immediateExpenses')} />
+              onChange={this.handleChange('immediate_expenses')} />
           </label>
           <br />
           <label className={"label"}>
@@ -99,9 +100,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={additionalSavings}
+              value={additional_annual_savings}
               placeholder='Additional Annual Savings'
-              onChange={this.handleChange('additionalSavings')} />
+              onChange={this.handleChange('additional_annual_savings')} />
           </label>
           <br />
           <label className={"label"}>
@@ -109,9 +110,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={monthlyExpensesAmount}
+              value={annual_expenses_amount}
               placeholder='Addional Monthly Expenses Amount'
-              onChange={this.handleChange('monthlyExpensesAmount')} />
+              onChange={this.handleChange('annual_expenses_amount')} />
           </label>
           <br />
           <label className={"label"}>
@@ -119,9 +120,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={monthlyExpensesStart}
+              value={annual_expenses_start}
               placeholder='Monthly Expenses Start Year'
-              onChange={this.handleChange('monthlyExpensesStart')} />
+              onChange={this.handleChange('annual_expenses_start')} />
           </label>
           <br />
           <label className={"label"}>
@@ -129,9 +130,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={monthlyExpensesEnds}
+              value={annual_expenses_end}
               placeholder='Monthly Expenses End Year'
-              onChange={this.handleChange('monthlyExpensesEnds')} />
+              onChange={this.handleChange('annual_expenses_end')} />
           </label>
           <label className={"label"}>
             Investment Choice:
@@ -140,8 +141,8 @@ class Disability extends React.Component {
               type="range"
               min="1"
               max="9"
-              value={this.state.investmentChoice}
-              onChange={this.handleChange}
+              value={portfolio}
+              onChange={this.handleChange('portfolio')}
             />
           </label>
           <br />
