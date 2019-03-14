@@ -5,8 +5,6 @@ import DisabilityForm from './Components/DisabilityForm.jsx';
 import DivorceForm from './Components/DivorceForm.jsx';
 import Graphs from './Components/Graphs.jsx';
 
-// import colorHome from './images/HomePage_Color.png';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -153,13 +151,13 @@ class App extends React.Component {
 
         {this.state.isHomePage && !this.state.showABLEmodal &&
           <div className={"homePage"}>
-            <h1>Project Hope</h1>
+            <h1 className={"homeHeader"}>Project HOPE</h1>
             <div>
               <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" />
             </div>
             {/* <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" /> */}
-            <img onClick={this.handleDivorce} src={"app/assets/images/divorce.png"} alt="Logo" />
-            <img onClick={this.handleDisability} src={"app/assets/images/disability.png"} alt="Logo" />
+            <img className={"divorceImage"} onClick={this.handleDivorce} src={"app/assets/images/divorce.png"} alt="Logo" />
+            <img className={"disabilityImage"} onClick={this.handleDisability} src={"app/assets/images/disability.png"} alt="Logo" />
             {/* <img src={"app/assets/images/HomePage_Mono.png"} alt="Logo" /> */}
           </div>
         }
