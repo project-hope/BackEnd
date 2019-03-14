@@ -3,7 +3,6 @@ import Chartist from 'chartist';
 import ChartistGraph from 'react-chartist';
 import ctAxisTitle from 'chartist-plugin-axistitle'
 import 'chartist-plugin-legend'
-import '../css/graphs.css';
 
 class Graphs extends React.Component {
   constructor(props) {
