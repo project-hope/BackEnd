@@ -1,5 +1,4 @@
-@disabilities.each do|disability|
-
+json.array!(@disabilities) do|disability|
   json.age disability.age
   json.portfolio_value_expected disability.portfolio_value_expected
   json.portfolio_value_ub disability.portfolio_value_ub
