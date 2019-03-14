@@ -134,7 +134,6 @@ class App extends React.Component {
       incomeChartData.series[2].push(datum.income_ub);
     });
     this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
-    this;
   }
 
   render() {

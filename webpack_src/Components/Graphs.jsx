@@ -29,7 +29,7 @@ class Graphs extends React.Component {
             axisClass: 'ct-axis-title',
             offset: {
               x: 0,
-              y: 0
+              y: -20
             },
             textAnchor: 'middle',
             flipTitle: true
@@ -62,7 +62,7 @@ class Graphs extends React.Component {
             axisClass: 'ct-axis-title',
             offset: {
               x: 0,
-              y: 0
+              y: -20
             },
             textAnchor: 'middle',
             flipTitle: true
@@ -86,29 +86,29 @@ class Graphs extends React.Component {
       ]
     }
     return (
-      <div>
+      <div className={'graphWrapper'}>
         {this.props.chartVisible &&
           <div className={'graphs'}>
             <div className={"individualGraph"}>
               <h2 className={"heading"}>Portfolio Value</h2>
-              <ChartistGraph 
+              <ChartistGraph
                 className={`${this.props.colorScheme}Lines`}
-                data={this.props.portfolioChartData} 
-                options={portfolioChartOptions} 
-                type={'Line'} 
+                data={this.props.portfolioChartData}
+                options={portfolioChartOptions}
+                type={'Line'}
               />
               <br />
             </div>
-            {this.props.showIncomeGraph && 
+            {this.props.showIncomeGraph &&
               <div className={"individualGraph"}>
-              <h2 className={"heading"}>Annual Retirement Income</h2>
-              <ChartistGraph 
-                className={`${this.props.colorScheme}Lines`}
-                data={this.props.incomeChartData} 
-                options={incomeChartOptions} 
-                type={'Line'}   
-              />
-            </div>
+                <h2 className={"heading"}>Annual Retirement Income</h2>
+                <ChartistGraph
+                  className={`${this.props.colorScheme}Lines`}
+                  data={this.props.incomeChartData}
+                  options={incomeChartOptions}
+                  type={'Line'}
+                />
+              </div>
             }
           </div>
         }
