@@ -53,7 +53,7 @@ class Disability extends React.Component {
 
     return (
       <div className={"form"}>
-        <h2 className={"formHeader"}>Disability</h2>
+        <h2 className={"formHeader"}>Dealing with Disability</h2>
         <form onSubmit={this.handleSubmit}>
           <div className={"section"}>
             <label className={"label"}>
@@ -79,7 +79,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Savings:
+              Savings Pre Diagnosis:
               <input
                 className={"input"}
                 type="number"
@@ -90,7 +90,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Immediate Expenses:
+              Savings Used For Diagnosis:
               <input
                 className={"input"}
                 type="number"
@@ -112,7 +112,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Additional Monthly Expenses:
+              Ongoing Additional Annual Expenses:
               <input
                 className={"input"}
                 type="number"
@@ -123,7 +123,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Monthly Expenses Start Year:
+              Starting In (# Years):
               <input
                 className={"input"}
                 type="number"
@@ -134,7 +134,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Monthly Expenses End Year:
+              Estimated Length (# Years):
               <input
                 className={"input"}
                 type="number"

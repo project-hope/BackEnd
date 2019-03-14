@@ -59,6 +59,7 @@
   text-align: center;
   color: white;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 input::-webkit-outer-spin-button,

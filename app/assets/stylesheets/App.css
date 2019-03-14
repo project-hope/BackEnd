@@ -35,7 +35,7 @@ body {
 .divorceImage {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   color:white;
   cursor: pointer;
 }
@@ -43,7 +43,7 @@ body {
 .disabilityImage {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   color:white;
   cursor: pointer;
 }

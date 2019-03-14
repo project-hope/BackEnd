@@ -43,7 +43,7 @@ class Divorce extends React.Component {
     const earningLevelTooltip = "Description here";
     return (
       <div className={"form"}>
-        <h2 className={"formHeader"}>Divorce</h2>
+        <h2 className={"formHeader"}>Dealing with Divorce</h2>
         <form onSubmit={this.handleSubmit}>
           <div className={"section"}>
             <label className={"label"}>
@@ -81,7 +81,7 @@ class Divorce extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Current Savings Before Divorce:
+              Savings Pre Divorce:
               <input
                 className={"input"}
                 type="number"
@@ -93,7 +93,7 @@ class Divorce extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Current Savings After Divorce:
+              Savings Post Divorce:
               <input
                 className={"input"}
                 type="number"
