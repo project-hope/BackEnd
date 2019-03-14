@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190312232351) do
+ActiveRecord::Schema.define(version: 20190314023810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20190312232351) do
     t.integer "additional_annual_savings"
     t.string "portfolio"
     t.integer "annual_expenses_start_year"
-    t.integer "annual_expenses_end_year"
+    t.integer "annual_expenses_length"
     t.integer "annual_expenses_amount"
     t.integer "age"
     t.float "portfolio_value_expected"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20190312232351) do
     t.float "income_expected"
     t.float "income_ub"
     t.float "income_lb"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "divorces", force: :cascade do |t|
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20190312232351) do
     t.float "income_expected"
     t.float "income_ub"
     t.float "income_lb"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

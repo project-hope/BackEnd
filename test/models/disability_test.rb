@@ -10,7 +10,7 @@
 #  additional_annual_savings  :integer
 #  portfolio                  :string
 #  annual_expenses_start_year :integer
-#  annual_expenses_end_year   :integer
+#  annual_expenses_length     :integer
 #  annual_expenses_amount     :integer
 #  age                        :integer
 #  portfolio_value_expected   :float
@@ -19,8 +19,8 @@
 #  income_expected            :float
 #  income_ub                  :float
 #  income_lb                  :float
-#  created_at                 :datetime         not null
-#  updated_at                 :datetime         not null
+#  created_at                 :datetime
+#  updated_at                 :datetime
 #
 
 require 'test_helper'

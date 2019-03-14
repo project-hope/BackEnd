@@ -17,8 +17,8 @@
 #  income_expected           :float
 #  income_ub                 :float
 #  income_lb                 :float
-#  created_at                :datetime         not null
-#  updated_at                :datetime         not null
+#  created_at                :datetime
+#  updated_at                :datetime
 #
 
 class Divorce < ApplicationRecord
