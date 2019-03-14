@@ -15,7 +15,7 @@ class Disability extends React.Component {
       additional_annual_savings: undefined,
       annual_expenses_amount: undefined,
       annual_expenses_start: undefined,
-      annual_expenses_end: undefined,
+      annual_expenses_length: undefined,
       portfolio: 5,
     };
 
@@ -48,7 +48,7 @@ class Disability extends React.Component {
       additional_annual_savings,
       annual_expenses_amount,
       annual_expenses_start,
-      annual_expenses_end,
+      annual_expenses_length,
       portfolio
     } = this.state;
 
@@ -130,9 +130,9 @@ class Disability extends React.Component {
             <input
               className={"input"}
               type="number"
-              value={annual_expenses_end}
-              placeholder='Monthly Expenses End Year'
-              onChange={this.handleChange('annual_expenses_end')} />
+              value={annual_expenses_length}
+              placeholder='Monthly Expenses Length'
+              onChange={this.handleChange('annual_expenses_length')} />
           </label>
           <label className={"label"}>
             Investment Choice:

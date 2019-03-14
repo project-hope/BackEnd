@@ -24,7 +24,7 @@ class Api::DisabilityController < ApplicationController
       additional_annual_savings: params[:additional_annual_savings],
       annual_expenses_amount: params[:annual_expenses_amount],
       annual_expenses_start_year: params[:annual_expenses_start],
-      annual_expenses_end_year: params[:annual_expenses_end],
+      annual_expenses_length: params[:annual_expenses_length],
       portfolio: get_portfolio(params[:portfolio].to_i - 1)
       })
     render :index
