@@ -50,7 +50,6 @@ class Divorce extends React.Component {
               Current Age:
               <input
                 className={"input"}
-                placeholder="Current Age"
                 type="number"
                 required
                 value={current_age}
@@ -63,7 +62,6 @@ class Divorce extends React.Component {
               Retirement Age:
               <input
                 className={"input"}
-                placeholder="Current Age"
                 type="number"
                 required
                 value={retirement_age}
@@ -86,7 +84,6 @@ class Divorce extends React.Component {
               Current Savings Before Divorce:
               <input
                 className={"input"}
-                placeholder="Savings Before Divorce"
                 type="number"
                 required
                 value={current_savings}
@@ -99,7 +96,6 @@ class Divorce extends React.Component {
               Current Savings After Divorce:
               <input
                 className={"input"}
-                placeholder="Savings After Divorce"
                 type="number"
                 required
                 value={savings_after_divorce}
@@ -112,7 +108,6 @@ class Divorce extends React.Component {
               Additional Annual Savings:
               <input
                 className={"input"}
-                placeholder="Additional Annual Savings"
                 type="number"
                 required
                 value={additional_annual_savings}
