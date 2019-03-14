@@ -63,7 +63,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={current_age}
-                placeholder='Current Age'
                 onChange={this.handleChange('current_age')} />
             </label>
           </div>
@@ -75,7 +74,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={retirement_age}
-                placeholder='Retirement Age'
                 onChange={this.handleChange('retirement_age')} />
             </label>
           </div>
@@ -87,7 +85,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={current_savings}
-                placeholder='Savings'
                 onChange={this.handleChange('current_savings')} />
             </label>
           </div>
@@ -99,7 +96,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={immediate_expenses}
-                placeholder='Immediate Expenses'
                 onChange={this.handleChange('immediate_expenses')} />
             </label>
           </div>
@@ -111,7 +107,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={additional_annual_savings}
-                placeholder='Additional Annual Savings'
                 onChange={this.handleChange('additional_annual_savings')} />
             </label>
           </div>
@@ -123,7 +118,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={annual_expenses_amount}
-                placeholder='Addional Monthly Expenses Amount'
                 onChange={this.handleChange('annual_expenses_amount')} />
             </label>
           </div>
@@ -135,7 +129,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={annual_expenses_start}
-                placeholder='Monthly Expenses Start Year'
                 onChange={this.handleChange('annual_expenses_start')} />
             </label>
           </div>
@@ -147,7 +140,6 @@ class Disability extends React.Component {
                 type="number"
                 required
                 value={annual_expenses_length}
-                placeholder='Monthly Expenses Length'
                 onChange={this.handleChange('annual_expenses_length')} />
             </label>
           </div>

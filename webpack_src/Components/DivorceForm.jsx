@@ -26,14 +26,14 @@ class Divorce extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state)
+    console.log(this.state);
     this.props.onSubmit(this.state);
   }
 
   render() {
     const {
       current_age,
-      earnings_level,
+      retirement_age,
       current_savings,
       savings_after_divorce,
       additional_annual_savings,
@@ -50,11 +50,22 @@ class Divorce extends React.Component {
               Current Age:
               <input
                 className={"input"}
-                placeholder="Current Age"
                 type="number"
                 required
                 value={current_age}
                 onChange={this.handleChange('current_age')}
+              />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Retirement Age:
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={retirement_age}
+                onChange={this.handleChange('retirement_age')}
               />
             </label>
           </div>
@@ -73,7 +84,6 @@ class Divorce extends React.Component {
               Current Savings Before Divorce:
               <input
                 className={"input"}
-                placeholder="Savings Before Divorce"
                 type="number"
                 required
                 value={current_savings}
@@ -86,7 +96,6 @@ class Divorce extends React.Component {
               Current Savings After Divorce:
               <input
                 className={"input"}
-                placeholder="Savings After Divorce"
                 type="number"
                 required
                 value={savings_after_divorce}
@@ -99,7 +108,6 @@ class Divorce extends React.Component {
               Additional Annual Savings:
               <input
                 className={"input"}
-                placeholder="Additional Annual Savings"
                 type="number"
                 required
                 value={additional_annual_savings}
