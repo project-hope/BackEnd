@@ -1,4 +1,4 @@
-Notes,current_age,retirement_age,current_savings,savings_after_disability,additional_annual_savings,portfolio,annual_expenses_start_year,annual_expenses_length,annual_expenses_amount,age,portfolio_value_expected,portfolio_value_ub,portfolio_value_lb,income_expected,income_ub,income_lb
-disability case 1 - younger age,10,65,200000,100000,0,MPU_ES010,1,55,24000,10,200000,200000,200000,82398.49033,82398.49033,82398.49033
-disability case 1 - younger age,10,65,200000,100000,0,MPU_ES010,1,55,24000,11,78775.28286,81437.40094,76120.2753,31739.89418,34638.05342,28872.69006
-disability case 1 - younger age,10,65,200000,100000,0,MPU_ES010,1,55,24000,12,56852.75762,60230.95166,53503.79408,22380.44523,25412.97342,19390.29456
+current_age,retirement_age,earnings_level,current_savings,savings_after_divorce,additional_annual_savings,portfolio,age,portfolio_value_expected,portfolio_value_ub,portfolio_value_lb,income_expected,income_ub,income_lb
+40,65,low,100000,50000,0,MPU_ES010,40,100000,100000,100000,11825.38329,11825.38329,11825.38329
+40,65,low,100000,50000,0,MPU_ES010,41,51627.36112,53200.75943,50050.65978,5967.750547,6417.024063,5519.333224
+40,65,low,100000,50000,0,MPU_ES010,42,53309.80333,55633.2875,50997.01141,6013.661485,6660.727108,5359.795048
