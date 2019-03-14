@@ -1,12 +1,10 @@
 .graphs {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 20px 20px 40px;
   height: calc(100vh - 30px);
-  width: calc(75% - 65px);
+  width: 100%;
   overflow: auto;
   float: right;
+  box-sizing: border-box;
 }
 
 .heading {
@@ -17,4 +15,8 @@
 
 .individualGraph {
   /* height: calc(50% + 20px); */
+}
+
+.graphWrapper {
+  flex-grow: 1;
 }
