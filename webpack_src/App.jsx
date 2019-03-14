@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   returnHome() {
-    this.setState({ isHomePage: true })
+    this.setState({ isHomePage: true });
     this.setState({ chartVisible: false });
   }
 
@@ -48,7 +48,7 @@ class App extends React.Component {
     this.setState({ showDivorce: false });
     this.setState({ showDisability: true });
     this.setState({ colorScheme: "disability" });
-    this.setState({ isHomePage: false })
+    this.setState({ isHomePage: false });
   }
 
   handleDivorce() {
@@ -56,22 +56,22 @@ class App extends React.Component {
     this.setState({ showDivorce: true });
     this.setState({ showDisability: false });
     this.setState({ colorScheme: "divorce" });
-    this.setState({ isHomePage: false })
+    this.setState({ isHomePage: false });
   }
 
   handleABLEClick() {
-    this.setState({ showABLEmodal: true })
+    this.setState({ showABLEmodal: true });
   }
 
   closeABLEModal() {
-    this.setState({ showABLEmodal: false })
+    this.setState({ showABLEmodal: false });
   }
 
   handleDisabilitySubmit(data) {
-    if(data.current_age > 25) {
-      this.setState({ showIncomeGraph: true})
+    if (data.current_age > 25) {
+      this.setState({ showIncomeGraph: true });
     } else {
-      this.setState({ showIncomeGraph: false})
+      this.setState({ showIncomeGraph: false });
     }
     axios.get('/api/disability.json', {
       params: data
@@ -96,7 +96,7 @@ class App extends React.Component {
   }
 
   handleDivorceSubmit(data) {
-    this.setState({ showIncomeGraph: true})
+    this.setState({ showIncomeGraph: true });
     axios.get('/api/divorce.json', {
       params: data
     }).then(response => {
@@ -143,32 +143,32 @@ class App extends React.Component {
     return (
       <div className={"background"}>
         {this.state.showABLEmodal &&
-        <div class="img_wrp">
-          <img className={"ableImage"} src={"app/assets/images/ABLE_chartTitle.png"} alt="Logo" /> 
-          <div class="close" onClick={this.closeABLEModal}>x</div>
-          {/* <span class="glyphicon glyphicon-remove" className={"close"}/> */}
-        </div>
-          
+          <div class="img_wrp">
+            <img className={"ableImage"} src={"https://res.cloudinary.com/dtw7iteso/image/upload/v1552595504/Project%20Hope/ABLE_chartTitle.png"} alt="Logo" />
+            <div class="close" onClick={this.closeABLEModal}>x</div>
+            {/* <span class="glyphicon glyphicon-remove" className={"close"}/> */}
+          </div>
+
         }
 
         {this.state.isHomePage && !this.state.showABLEmodal &&
           <div className={"homePage"}>
             <h1>Project Hope</h1>
             <div>
-              <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" />
+              <img className={"homePageImage"} src={"https://res.cloudinary.com/dtw7iteso/image/upload/v1552595505/Project%20Hope/HomePage_Color.png"} alt="Logo" />
             </div>
             {/* <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" /> */}
-            <img onClick={this.handleDivorce} src={"app/assets/images/divorce.png"} alt="Logo" />
-            <img onClick={this.handleDisability} src={"app/assets/images/disability.png"} alt="Logo" />
+            <img onClick={this.handleDivorce} src={"https://res.cloudinary.com/dtw7iteso/image/upload/v1552595503/Project%20Hope/divorce.png"} alt="Logo" />
+            <img onClick={this.handleDisability} src={"https://res.cloudinary.com/dtw7iteso/image/upload/v1552595503/Project%20Hope/disability.png"} alt="Logo" />
             {/* <img src={"app/assets/images/HomePage_Mono.png"} alt="Logo" /> */}
           </div>
         }
-        
+
         {!this.state.isHomePage && !this.state.showABLEmodal &&
           <React.Fragment>
             <div className={"header"} className={this.state.colorScheme}>
               <h1 className={"headerText"} onClick={this.returnHome}>Project HOPE</h1>
-              
+
             </div>
 
             <div className={"body"}>
@@ -187,11 +187,11 @@ class App extends React.Component {
               }
 
               {(this.state.showDivorce || this.state.showDisability) &&
-                < Graphs 
-                  chartVisible={this.state.chartVisible} 
+                < Graphs
+                  chartVisible={this.state.chartVisible}
                   showIncomeGraph={this.state.showIncomeGraph}
-                  portfolioChartData={this.state.portfolioChartData} 
-                  incomeChartData={this.state.incomeChartData} 
+                  portfolioChartData={this.state.portfolioChartData}
+                  incomeChartData={this.state.incomeChartData}
                   colorScheme={this.state.colorScheme}
                 />
               }
