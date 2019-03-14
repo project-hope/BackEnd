@@ -1,16 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-// import Disability from './disability/Disability.jsx';
-// import Divorce from  './divorce/Divorce.jsx';
-
 import DisabilityForm from './Components/DisabilityForm.jsx';
 import DivorceForm from './Components/DivorceForm.jsx';
 import Graphs from './Components/Graphs.jsx';
-
-import './App.css';
-// import '../app/assets/stylesheets/App.css';
-// import '../app/assets/stylesheets/application.css';
 
 class App extends React.Component {
   constructor(props) {

@@ -1,5 +1,4 @@
 import React from 'react';
-import '../css/form.css';
 
 class Disability extends React.Component {
   constructor(props) {
@@ -53,100 +52,122 @@ class Disability extends React.Component {
     } = this.state;
 
     return (
-      <div>
-        <form className={"form"} onSubmit={this.handleSubmit}>
-          <label className={"label"}>
-            Current Age
-            <input
-              className={"input"}
-              type="number"
-              value={current_age}
-              placeholder='Current Age'
-              onChange={this.handleChange('current_age')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Retirement Age
-            <input
-              className={"input"}
-              type="number"
-              value={retirement_age}
-              placeholder='Retirement Age'
-              onChange={this.handleChange('retirement_age')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Savings
-            <input
-              className={"input"}
-              type="number"
-              value={current_savings}
-              placeholder='Savings'
-              onChange={this.handleChange('current_savings')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Immediate Expenses
-            <input
-              className={"input"}
-              type="number"
-              value={immediate_expenses}
-              placeholder='Immediate Expenses'
-              onChange={this.handleChange('immediate_expenses')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Additional Annual Savings
-            <input
-              className={"input"}
-              type="number"
-              value={additional_annual_savings}
-              placeholder='Additional Annual Savings'
-              onChange={this.handleChange('additional_annual_savings')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Additional Monthly Expenses
-            <input
-              className={"input"}
-              type="number"
-              value={annual_expenses_amount}
-              placeholder='Addional Monthly Expenses Amount'
-              onChange={this.handleChange('annual_expenses_amount')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Monthly Expenses Start Year
-            <input
-              className={"input"}
-              type="number"
-              value={annual_expenses_start}
-              placeholder='Monthly Expenses Start Year'
-              onChange={this.handleChange('annual_expenses_start')} />
-          </label>
-          <br />
-          <label className={"label"}>
-            Monthly Expenses End Year
-            <input
-              className={"input"}
-              type="number"
-              value={annual_expenses_length}
-              placeholder='Monthly Expenses Length'
-              onChange={this.handleChange('annual_expenses_length')} />
-          </label>
-          <label className={"label"}>
-            Investment Choice:
-            <input
-              className={"input"}
-              type="range"
-              min="1"
-              max="9"
-              value={portfolio}
-              onChange={this.handleChange('portfolio')}
-            />
-          </label>
-          <br />
-          <button className={"button"} type='submit'>Submit</button>
+      <div className={"form"}>
+        <h2 className={"formHeader"}>Disability</h2>
+        <form onSubmit={this.handleSubmit}>
+          <div className={"section"}>
+            <label className={"label"}>
+              Current Age
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={current_age}
+                placeholder='Current Age'
+                onChange={this.handleChange('current_age')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Retirement Age
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={retirement_age}
+                placeholder='Retirement Age'
+                onChange={this.handleChange('retirement_age')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Savings
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={current_savings}
+                placeholder='Savings'
+                onChange={this.handleChange('current_savings')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Immediate Expenses
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={immediate_expenses}
+                placeholder='Immediate Expenses'
+                onChange={this.handleChange('immediate_expenses')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Additional Annual Savings
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={additional_annual_savings}
+                placeholder='Additional Annual Savings'
+                onChange={this.handleChange('additional_annual_savings')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Additional Monthly Expenses
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={annual_expenses_amount}
+                placeholder='Addional Monthly Expenses Amount'
+                onChange={this.handleChange('annual_expenses_amount')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Monthly Expenses Start Year
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={annual_expenses_start}
+                placeholder='Monthly Expenses Start Year'
+                onChange={this.handleChange('annual_expenses_start')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Monthly Expenses End Year
+              <input
+                className={"input"}
+                type="number"
+                required
+                value={annual_expenses_length}
+                placeholder='Monthly Expenses Length'
+                onChange={this.handleChange('annual_expenses_length')} />
+            </label>
+          </div>
+          <div className={"section"}>
+            <label className={"label"}>
+              Investment Choice:
+              <input
+                className={"input"}
+                type="range"
+                required
+                min="1"
+                max="9"
+                value={portfolio}
+                onChange={this.handleChange('portfolio')}
+              />
+            </label>
+          </div>
+          <div className={"section"}>
+            <button className={"button"} type='submit'>Submit</button>
+          </div>
         </form>
       </div>
     );
