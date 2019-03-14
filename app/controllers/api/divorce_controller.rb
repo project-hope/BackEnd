@@ -19,13 +19,13 @@ class Api::DivorceController < ApplicationController
     current_age = params[:current_age]
     @divorces = Divorce.where({
       current_age: params[:current_age],
+      retirement_age: params[:retirement_age],
       earnings_level: params[:earnings_level],
       current_savings: params[:current_savings],
       savings_after_divorce: params[:savings_after_divorce],
       additional_annual_savings: params[:additional_annual_savings],
       portfolio: get_portfolio(params[:portfolio].to_i - 1)
       })
-    p Divorce.first.attributes
     render :index
   end
 end
