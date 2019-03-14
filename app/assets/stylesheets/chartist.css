@@ -207,10 +207,17 @@
 }
 
 .ct-series-a .ct-bar,
-.ct-series-a .ct-line,
-.ct-series-a .ct-point,
+.divorceLines .ct-series-a .ct-line,
+.divorceLines .ct-series-a .ct-point,
 .ct-series-a .ct-slice-donut {
-  stroke: green
+  stroke: rgb(0, 139, 92);
+}
+
+.ct-series-a .ct-bar,
+.disabilityLines .ct-series-a .ct-line,
+.disabilityLines .ct-series-a .ct-point,
+.ct-series-a .ct-slice-donut {
+  stroke: rgb(252, 155, 179);
 }
 
 .ct-series-a .ct-area,
@@ -220,10 +227,19 @@
 }
 
 .ct-series-b .ct-bar,
-.ct-series-b .ct-line,
-.ct-series-b .ct-point,
+.divorceLines .ct-series-b .ct-line,
+.divorceLines .ct-series-b .ct-point,
 .ct-series-b .ct-slice-donut {
-  stroke: lightgreen
+  stroke: rgb(155, 215, 190);
+  stroke-dasharray: 10px 10px;
+}
+
+.ct-series-b .ct-bar,
+.disabilityLines .ct-series-b .ct-line,
+.disabilityLines .ct-series-b .ct-point,
+.ct-series-b .ct-slice-donut {
+  stroke: rgb(248, 210, 214);
+  stroke-dasharray: 10px 10px;
 }
 
 .ct-series-b .ct-area,
@@ -233,10 +249,19 @@
 }
 
 .ct-series-c .ct-bar,
-.ct-series-c .ct-line,
-.ct-series-c .ct-point,
+.divorceLines .ct-series-c .ct-line,
+.divorceLines .ct-series-c .ct-point,
 .ct-series-c .ct-slice-donut {
-  stroke: darkgreen
+  stroke: rgb(0, 87, 60);
+  stroke-dasharray: 10px 10px;
+}
+
+.ct-series-c .ct-bar,
+.disabilityLines .ct-series-c .ct-line,
+.disabilityLines .ct-series-c .ct-point,
+.ct-series-c .ct-slice-donut {
+  stroke: rgb(200, 0, 88);
+  stroke-dasharray: 10px 10px;
 }
 
 .ct-series-c .ct-area,
@@ -881,19 +906,34 @@
   right: 0;
 }
 
-.ct-legend .ct-series-0:before {
-  background-color: green;
-  border-color: green;
+.divorceLines .ct-legend .ct-series-0:before {
+  background-color: rgb(0, 139, 92);
+  border-color: rgb(0, 139, 92);
 }
 
-.ct-legend .ct-series-1:before {
-  background-color: lightgreen;
-  border-color: lightgreen;
+.divorceLines .ct-legend .ct-series-1:before {
+  background-color: rgb(155, 215, 190);
+  border-color: rgb(155, 215, 190);
 }
 
-.ct-legend .ct-series-2:before {
-  background-color: darkgreen;
-  border-color: darkgreen;
+.divorceLines .ct-legend .ct-series-2:before {
+  background-color: rgb(0, 87, 60);
+  border-color: rgb(0, 87, 60);
+}
+
+.disabilityLines .ct-legend .ct-series-0:before {
+  background-color: rgb(252, 155, 179);
+  border-color: rgb(252, 155, 179);
+}
+
+.disabilityLines .ct-legend .ct-series-1:before {
+  background-color: rgb(248, 210, 214);
+  border-color: rgb(248, 210, 214);
+}
+
+.disabilityLines .ct-legend .ct-series-2:before {
+  background-color: rgb(200, 0, 88);
+  border-color: rgb(200, 0, 88);
 }
 
 .ct-legend .ct-series-3:before {
