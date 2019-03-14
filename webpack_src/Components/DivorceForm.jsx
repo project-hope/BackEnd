@@ -5,7 +5,7 @@ class Divorce extends React.Component {
     super(props);
     this.state = {
       current_age: undefined,
-      earnings_level: undefined,
+      earnings_level: "low",
       current_savings: undefined,
       savings_after_divorce: undefined,
       additional_annual_savings: undefined,
@@ -26,6 +26,7 @@ class Divorce extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log(this.state)
     this.props.onSubmit(this.state);
   }
 
@@ -38,6 +39,8 @@ class Divorce extends React.Component {
       additional_annual_savings,
       portfolio
     } = this.state;
+
+    const earningLevelTooltip = "Description here";
     return (
       <div className={"form"}>
         <h2 className={"formHeader"}>Divorce</h2>
@@ -56,16 +59,13 @@ class Divorce extends React.Component {
             </label>
           </div>
           <div className={"section"}>
-            <label className={"label"}>
+            <label className={"label"} title="Description here">
               Earning Level:
-              <input
-                className={"input"}
-                placeholder="Earning Level"
-                type="string"
-                required
-                value={earnings_level}
-                onChange={this.handleChange('earnings_level')}
-              />
+              <span class="glyphicon glyphicon-info-sign white"></span>
+              <select className={"input"} onChange={this.handleChange('earnings_level')}>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
             </label>
           </div>
           <div className={"section"}>

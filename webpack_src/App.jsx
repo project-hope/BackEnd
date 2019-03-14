@@ -5,10 +5,14 @@ import DisabilityForm from './Components/DisabilityForm.jsx';
 import DivorceForm from './Components/DivorceForm.jsx';
 import Graphs from './Components/Graphs.jsx';
 
+// import colorHome from './images/HomePage_Color.png';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isHomePage: true,
+      showABLEmodal: false,
       showDisability: false,
       showDivorce: false,
       chartVisible: false,
@@ -20,46 +24,99 @@ class App extends React.Component {
         labels: [],
         series: []
       },
+      colorScheme: "disability",
+      showIncomeGraph: true,
     };
 
     this.returnHome = this.returnHome.bind(this);
     this.handleDisability = this.handleDisability.bind(this);
     this.handleDivorce = this.handleDivorce.bind(this);
+    this.handleABLEClick = this.handleABLEClick.bind(this);
+    this.closeABLEModal = this.closeABLEModal.bind(this);
     this.handleDisabilitySubmit = this.handleDisabilitySubmit.bind(this);
     this.handleDivorceSubmit = this.handleDivorceSubmit.bind(this);
     this.processData = this.processData.bind(this);
   }
 
   returnHome() {
-    this.setState({ showDivorce: false });
-    this.setState({ showDisability: false });
+    this.setState({ isHomePage: true })
     this.setState({ chartVisible: false });
   }
 
   handleDisability() {
+    this.setState({ chartVisible: false });
     this.setState({ showDivorce: false });
     this.setState({ showDisability: true });
+    this.setState({ colorScheme: "disability" });
+    this.setState({ isHomePage: false })
   }
 
   handleDivorce() {
+    this.setState({ chartVisible: false });
     this.setState({ showDivorce: true });
     this.setState({ showDisability: false });
+    this.setState({ colorScheme: "divorce" });
+    this.setState({ isHomePage: false })
+  }
+
+  handleABLEClick() {
+    this.setState({ showABLEmodal: true })
+  }
+
+  closeABLEModal() {
+    this.setState({ showABLEmodal: false })
   }
 
   handleDisabilitySubmit(data) {
-    axios.get('/api/disability.json', {
-      params: data
-    }).then(response =>
-      this.processData(response.data)
-    );
+    if(data.current_age > 25) {
+      this.setState({ showIncomeGraph: true})
+    } else {
+      this.setState({ showIncomeGraph: false})
+    }
+    // axios.get('/api/disability.json', {
+    //   params: data
+    // }).then(response =>
+    //   this.processData(response.data)
+    // );
+    const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ]] };
+    const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ]] };
+    this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
   }
 
   handleDivorceSubmit(data) {
-    axios.get('/api/divorce.json', {
-      params: data
-    }).then(response => {
-      this.processData(response.data);
-    });
+    this.setState({ showIncomeGraph: true})
+    // axios.get('/api/divorce.json', {
+    //   params: data
+    // }).then(response => {
+    //   this.processData(response.data);
+    // });
+    const portfolioChartData = { labels: [1, 2, 3, 4, 5], series: [[
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ]] };
+    const incomeChartData = { labels: [1, 2, 3, 4, 5], series: [[
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ], [
+      Math.random(), Math.random(), Math.random(), Math.random(), Math.random()
+    ]] };
+    this.setState({ portfolioChartData, incomeChartData, chartVisible: true });
   }
 
   processData(data) {
@@ -85,29 +142,62 @@ class App extends React.Component {
   render() {
     return (
       <div className={"background"}>
-        <div className={"header"}>
-          <h1 margin={0} onClick={this.returnHome}>Project Hope</h1>
+        {this.state.showABLEmodal &&
+        <div class="img_wrp">
+          <img className={"ableImage"} src={"app/assets/images/ABLE_chartTitle.png"} alt="Logo" /> 
+          <div class="close" onClick={this.closeABLEModal}>x</div>
+          {/* <span class="glyphicon glyphicon-remove" className={"close"}/> */}
         </div>
+          
+        }
 
-        <div className={"body"}>
-          {!this.state.showDivorce && !this.state.showDisability &&
+        {this.state.isHomePage && !this.state.showABLEmodal &&
+          <div className={"homePage"}>
+            <h1>Project Hope</h1>
             <div>
-              <button onClick={this.handleDisability}>Disability</button>
-              <button onClick={this.handleDivorce}>Divorce</button>
+              <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" />
             </div>
-          }
-          {this.state.showDisability && !this.state.showDivorce &&
-            < DisabilityForm onSubmit={this.handleDisabilitySubmit} />
-          }
+            {/* <img className={"homePageImage"} src={"app/assets/images/HomePage_Color.png"} alt="Logo" /> */}
+            <img onClick={this.handleDivorce} src={"app/assets/images/divorce.png"} alt="Logo" />
+            <img onClick={this.handleDisability} src={"app/assets/images/disability.png"} alt="Logo" />
+            {/* <img src={"app/assets/images/HomePage_Mono.png"} alt="Logo" /> */}
+          </div>
+        }
+        
+        {!this.state.isHomePage && !this.state.showABLEmodal &&
+          <React.Fragment>
+            <div className={"header"} className={this.state.colorScheme}>
+              <h1 className={"headerText"} onClick={this.returnHome}>Project HOPE</h1>
+              
+            </div>
 
-          {this.state.showDivorce && !this.state.showDisability &&
-            < DivorceForm onSubmit={this.handleDivorceSubmit} />
-          }
+            <div className={"body"}>
+              {!this.state.showDivorce && !this.state.showDisability &&
+                <div>
+                  <button onClick={this.handleDisability}>Disability</button>
+                  <button onClick={this.handleDivorce}>Divorce</button>
+                </div>
+              }
+              {this.state.showDisability && !this.state.showDivorce &&
+                < DisabilityForm onSubmit={this.handleDisabilitySubmit} onABLEClick={this.handleABLEClick} />
+              }
 
-          {(this.state.showDivorce || this.state.showDisability) &&
-            < Graphs chartVisible={this.state.chartVisible} portfolioChartData={this.state.portfolioChartData} incomeChartData={this.state.incomeChartData} />
-          }
-        </div>
+              {this.state.showDivorce && !this.state.showDisability &&
+                < DivorceForm onSubmit={this.handleDivorceSubmit} />
+              }
+
+              {(this.state.showDivorce || this.state.showDisability) &&
+                < Graphs 
+                  chartVisible={this.state.chartVisible} 
+                  showIncomeGraph={this.state.showIncomeGraph}
+                  portfolioChartData={this.state.portfolioChartData} 
+                  incomeChartData={this.state.incomeChartData} 
+                  colorScheme={this.state.colorScheme}
+                />
+              }
+            </div>
+          </React.Fragment>
+        }
       </div>
     );
   }

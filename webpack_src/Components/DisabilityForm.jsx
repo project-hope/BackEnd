@@ -57,7 +57,7 @@ class Disability extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className={"section"}>
             <label className={"label"}>
-              Current Age
+              Current Age:
               <input
                 className={"input"}
                 type="number"
@@ -69,7 +69,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Retirement Age
+              Retirement Age:
               <input
                 className={"input"}
                 type="number"
@@ -81,7 +81,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Savings
+              Savings:
               <input
                 className={"input"}
                 type="number"
@@ -93,7 +93,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Immediate Expenses
+              Immediate Expenses:
               <input
                 className={"input"}
                 type="number"
@@ -105,7 +105,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Additional Annual Savings
+              Additional Annual Savings:
               <input
                 className={"input"}
                 type="number"
@@ -117,7 +117,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Additional Monthly Expenses
+              Additional Monthly Expenses:
               <input
                 className={"input"}
                 type="number"
@@ -129,7 +129,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Monthly Expenses Start Year
+              Monthly Expenses Start Year:
               <input
                 className={"input"}
                 type="number"
@@ -141,7 +141,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Monthly Expenses End Year
+              Monthly Expenses End Year:
               <input
                 className={"input"}
                 type="number"
@@ -169,6 +169,8 @@ class Disability extends React.Component {
             <button className={"button"} type='submit'>Submit</button>
           </div>
         </form>
+        <br />
+        <div className={"link"} onClick={this.props.onABLEClick}>Considering opening an ABLE account?</div>
       </div>
     );
   }

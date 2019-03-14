@@ -26,6 +26,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   vertical-align: middle;
+  width: 100%;
 }
 
 .label {
@@ -36,6 +37,7 @@
   text-align: left;
   padding-right: 5px;
   padding-left: 2px;
+  width: 100%;
 }
 
 .input {
@@ -47,4 +49,10 @@
 .button {
   float: right;
   margin-right: 5px;
+}
+
+.link {
+  text-align: center;
+  color: white;
+  cursor: pointer;
 }

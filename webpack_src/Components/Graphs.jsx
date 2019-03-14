@@ -91,13 +91,23 @@ class Graphs extends React.Component {
           <div className={'graphs'}>
             <div className={"individualGraph"}>
               <h2 className={"heading"}>Portfolio Value</h2>
-              <ChartistGraph data={this.props.portfolioChartData} options={portfolioChartOptions} type={'Line'} />
+              <ChartistGraph 
+                data={this.props.portfolioChartData} 
+                options={portfolioChartOptions} 
+                type={'Line'} 
+              />
               <br />
             </div>
-            <div className={"individualGraph"}>
+            {this.props.showIncomeGraph && 
+              <div className={"individualGraph"}>
               <h2 className={"heading"}>Annual Retirement Income</h2>
-              <ChartistGraph data={this.props.incomeChartData} options={incomeChartOptions} type={'Line'} />
+              <ChartistGraph 
+                data={this.props.incomeChartData} 
+                options={incomeChartOptions} 
+                type={'Line'}   
+              />
             </div>
+            }
           </div>
         }
       </div>
