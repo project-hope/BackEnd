@@ -105,7 +105,7 @@ class Divorce extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Additional Annual Savings:
+              Annual Savings:
               <input
                 className={"input"}
                 type="number"

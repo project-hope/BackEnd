@@ -101,7 +101,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Additional Annual Savings:
+              Annual Savings:
               <input
                 className={"input"}
                 type="number"
@@ -112,7 +112,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Ongoing Additional Annual Expenses:
+              Additional Expenses - Estimated Annual Total:
               <input
                 className={"input"}
                 type="number"
@@ -123,7 +123,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Starting Year (#):
+              Additional Expenses - Estimated Start Year:
               <input
                 className={"input"}
                 type="number"
@@ -134,7 +134,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Estimated Length (# Years):
+              Additional Expenses - Estimated Duration:
               <input
                 className={"input"}
                 type="number"
