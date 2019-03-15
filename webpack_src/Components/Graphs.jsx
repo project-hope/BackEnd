@@ -12,6 +12,7 @@ class Graphs extends React.Component {
   render() {
     const universalChartOptions = {
       fullWidth: true,
+      height: `${window.innerHeight * 0.35}px`,
       chartPadding: {
         right: 40
       },
