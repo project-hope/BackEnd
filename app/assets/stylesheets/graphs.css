@@ -4,6 +4,7 @@
   overflow: auto;
   float: right;
   box-sizing: border-box;
+  height: 100%;
 }
 
 .heading {
