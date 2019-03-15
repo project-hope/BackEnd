@@ -53,7 +53,7 @@ class Disability extends React.Component {
 
     return (
       <div className={"form"}>
-        <h2 className={"formHeader"}>Dealing with Disability</h2>
+        <h2 className={"formHeader"}>Disability</h2>
         <form onSubmit={this.handleSubmit}>
           <div className={"section"}>
             <label className={"label"}>
