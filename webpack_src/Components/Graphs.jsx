@@ -48,7 +48,7 @@ class Graphs extends React.Component {
         Chartist
           .plugins
           .legend({
-            legendNames: ['Est. Portfolio Value', 'Portfolio Value Upper Range', 'Portfolio Value Lower Range'],
+            legendNames: ['Est. Portfolio Value', 'Potential High Value', 'Potential Low Value'],
             position: 'bottom',
           })
       ]
@@ -81,7 +81,7 @@ class Graphs extends React.Component {
         Chartist
           .plugins
           .legend({
-            legendNames: ['Est. Annual Income', 'Income Upper Range', 'Income Lower Range'],
+            legendNames: ['Est. Annual Income', 'Income High Range', 'Income Low Range'],
             position: 'bottom',
           })
       ]

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   background-color: black;
+  font-family: Helvetica;
 }
 
 .background {
@@ -71,6 +72,8 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  height: 25px;
+  width: 25px;
   color:white;
   cursor: pointer;
 }
