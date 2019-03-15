@@ -123,7 +123,7 @@ class Disability extends React.Component {
           </div>
           <div className={"section"}>
             <label className={"label"}>
-              Starting In (# Years):
+              Starting Year (#):
               <input
                 className={"input"}
                 type="number"
