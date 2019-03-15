@@ -48,7 +48,7 @@ class Graphs extends React.Component {
         Chartist
           .plugins
           .legend({
-            legendNames: ['Est. Portfolio Value', 'Portfolio High Value', 'Portfolio Low Value'],
+            legendNames: ['Est. Portfolio Value', 'Potential High Value', 'Potential Low Value'],
             position: 'bottom',
           })
       ]
